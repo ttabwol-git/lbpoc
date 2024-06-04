@@ -6,6 +6,7 @@ import uuid
 # importing managers
 from api.managers.auth import VerifyToken
 from api.managers.slack import SlackWebClient
+from api.managers.mailjet import MailJetClient
 
 # importing routers
 from topics_router import TopicsRouter
@@ -28,10 +29,11 @@ class RegisterRouters:
         self.app = app
         self.auth = VerifyToken()
         self.slack = SlackWebClient()
+        self.mailjet = MailJetClient()
         self.prefix = '/api'
 
         self.routers = [
-            (TopicsRouter, TopicsEngine(self.slack), '/topics')
+            (TopicsRouter, TopicsEngine(self.slack, self.mailjet), '/topics')
         ]
 
         for router in self.routers:
