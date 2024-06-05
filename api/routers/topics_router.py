@@ -1,9 +1,12 @@
-from typing import Literal
-from fastapi import APIRouter, Security, Request, HTTPException
+"""Module for the topics router"""
+
+from fastapi import APIRouter, HTTPException, Request, Security
 from pydantic import BaseModel, Field
+from typing import Literal
 
 
 class TopicsRouter:
+    """Class for the topics router"""
 
     def __init__(self, auth, engine, prefix):
         self.router = APIRouter()
@@ -12,6 +15,7 @@ class TopicsRouter:
         self.prefix = prefix
 
         class SubmitParams(BaseModel):
+            """Class for the submit endpoint params"""
             topic: Literal['sales', 'pricing']
             description: str = Field(..., min_length=10, max_length=10000)
 
@@ -21,6 +25,7 @@ class TopicsRouter:
             params: SubmitParams,
             auth_result: str = Security(self.auth.verify)
         ) -> dict:
+            """Endpoint for submitting a topic"""
             try:
                 return await self.engine.submit(request, params)
             except Exception as e:
