@@ -66,15 +66,16 @@ tests/test_topics.py .....                                      [100%]
 Name                           Stmts   Miss  Cover
 --------------------------------------------------
 api/engine/__init__.py             0      0   100%
-api/engine/topics_engine.py       17      3    82%
+api/engine/topics_engine.py       23      4    83%
 api/managers/__init__.py           0      0   100%
 api/managers/auth.py              30      9    70%
-api/managers/config.py            28      0   100%
+api/managers/config.py            30      0   100%
+api/managers/mailjet.py           11      0   100%
 api/managers/slack.py             13      2    85%
 api/routers/__init__.py            0      0   100%
 api/routers/topics_router.py      18      2    89%
 --------------------------------------------------
-TOTAL                            106     16    85%
+TOTAL                            125     17    86%
 
 
 ========================= 5 passed in 0.59s =========================
