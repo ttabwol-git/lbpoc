@@ -13,6 +13,7 @@ class TopicsEngine:
 
     async def submit(self, request, params) -> dict:
         """Method to submit a new topic"""
+        response = {}
 
         if params.topic == 'pricing':
 
@@ -21,7 +22,7 @@ class TopicsEngine:
             message += f'\n\n{params.description}'
 
             # Send email
-            response = self.mailjet.send_email(subject='New Pricing Topic Submission', text=message)
+            response = await self.mailjet.send_email(subject='Test Email from LBPOC', text=message)
             if response is None:
                 raise HTTPException(status_code=500, detail='Failed to send email')
 
@@ -42,5 +43,6 @@ class TopicsEngine:
         return {
             'ok': True,
             'request_id': request.state.id,
-            'message': f'{params.topic} topic submitted successfully'
+            'message': f'{params.topic} topic submitted successfully',
+            'details': response
         }
