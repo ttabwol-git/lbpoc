@@ -26,6 +26,11 @@ AUTH0_ALGORITHMS='RS256'
 SLACK_API_TOKEN='your-slack-api-token'
 SLACK_CHANNEL='#your-slack-channel'
 SLACK_BOT_NAME='your-slack-bot-name'
+
+EMAIL_TO_ADDR='your@email.address'
+EMAIL_TO_NAME='Your Name'
+MAILJET_API_KEY='your-mailjet-api-key'
+MAILJET_API_SECRET='your-mailjet-api-secret'
 ```
 And set the auth0 bearer token for the tests in `config/pytest.env`:
 ```
@@ -74,3 +79,8 @@ TOTAL                            106     16    85%
 
 ========================= 5 passed in 0.59s =========================
 ```
+
+## 4. API Endpoints
+- **POST** `/api/topics/submit` → Submit a topic
+
+Find full API documentation at [Postman](https://documenter.getpostman.com/view/36001241/2sA3QzZTez)
