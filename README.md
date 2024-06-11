@@ -1,11 +1,9 @@
-# LBPOC: FastAPI Proof of Concept for Landbot
+# LBPOC: FastAPI Proof of Concept
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/67108534cd784c1bb5c7d47af9bf2adf)](https://app.codacy.com/gh/ttabwol-git/lbpoc/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![Known Vulnerabilities](https://snyk.io/test/github/ttabwol-git/lbpoc/badge.svg)](https://snyk.io/test/github/ttabwol-git/lbpoc)
 
 ## 1. Description
-This project serves as a demonstration of FastAPI capabilities, created specifically for Landbot as part of the application process for the Senior Software Engineer role.
-- Job details → [here](https://jobs.landbot.io/o/senior-software-engineer-2)
-- Backend challenge → [here](https://github.com/hello-umi/backend-challenge)
+This project serves as a demonstration of FastAPI capabilities, created as part of the application process for the Senior Software Engineer role.
 
 ## 2. Installation
 Developed and tested on Python [3.12.3](https://www.python.org/downloads/release/python-3123/)
